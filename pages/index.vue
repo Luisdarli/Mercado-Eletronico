@@ -14,6 +14,7 @@
       <!-- ALL COMPONENTS  -->
       <div v-else class="me-app-components">
         <main-header />
+        <main-section />
       </div>
 
     </div>
@@ -22,10 +23,12 @@
 
 <script>
 import Header from "../components/Header";
+import MainSection from "../components/Supplier"
 import { BSpinner } from "bootstrap-vue";
 export default {
   components: {
     "main-header": Header,
+    "main-section": MainSection,
     "b-spinner": BSpinner,
   },
   computed: {
