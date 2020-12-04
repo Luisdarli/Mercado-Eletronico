@@ -2,7 +2,8 @@ import axios from 'axios'
 
 export const state = () => ({
     data: [],
-    dataReady: false
+    dataReady: false,
+
 });
 
 export const getters = {
@@ -11,9 +12,10 @@ export const getters = {
         return state.data;
     },
 
-    getDataReady:(state) =>{
+    getDataReady:(state) => {
         return state.dataReady;
-    }
+    },
+
 
 };
 
@@ -23,11 +25,9 @@ export const mutations = {
     },
 
     dataIsReady:(state, value) => {
-        console.log('chego na funcao');
         state.dataReady = value
+    },
 
-        console.log('ready?', state.dataReady);
-    }
 };
 
 export const actions = {
@@ -48,5 +48,6 @@ export const actions = {
             })
         })
     },
+
 
 };
