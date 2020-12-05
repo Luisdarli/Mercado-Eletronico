@@ -27,8 +27,8 @@
             :icon="['fas', 'user']" />
             <span class="me-main-section-supplier"
             >{{ this.getData.supplier.contact.name }} -
-            <span class="me-main-section-supplier-email">
-                {{ this.getData.supplier.contact.email }}</span></span>
+            <a :href="`mailto: ${this.getData.supplier.contact.email}`" target="_blank" class="me-main-section-supplier-email">
+                {{ this.getData.supplier.contact.email }}</a></span>
         </div>
 
         <div class="me-main-section-icon-group">
@@ -149,7 +149,7 @@ export default {
     color: #b3b3b3;
 }
 
-.me-main-section-supplier{
-
+.me-main-section-supplier-email{
+    color: #1290ce;
 }
 </style>

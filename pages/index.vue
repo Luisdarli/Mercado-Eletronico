@@ -15,6 +15,7 @@
       <div v-else class="me-app-components">
         <main-header />
         <main-section />
+        <main-addresses />
       </div>
 
     </div>
@@ -24,11 +25,13 @@
 <script>
 import Header from "../components/Header";
 import MainSection from "../components/Supplier"
+import Address from "../components/Addresses"
 import { BSpinner } from "bootstrap-vue";
 export default {
   components: {
     "main-header": Header,
     "main-section": MainSection,
+    "main-addresses": Address,
     "b-spinner": BSpinner,
   },
   computed: {
@@ -70,8 +73,8 @@ body {
   margin: auto;
 }
 .me-app-wrapper {
-  height: 90%;
   width: 90%;
+  height: auto;
   border-radius: 20px;
   background-color: #ffffff;
 }
