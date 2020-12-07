@@ -52,11 +52,8 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
 
-body {
-  font-family: "Open Sans", sans-serif;
-}
 #me-app {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -65,6 +62,7 @@ body {
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
+  font-family: "Open Sans", sans-serif;
   background-color: grey;
 }
 .me-app-spinner{
@@ -77,6 +75,7 @@ body {
   height: auto;
   border-radius: 20px;
   background-color: #ffffff;
+  margin: 0 auto;
 }
 </style>
 

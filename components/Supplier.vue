@@ -152,4 +152,10 @@ export default {
 .me-main-section-supplier-email{
     color: #1290ce;
 }
+
+@media only screen and (max-width: 620px){
+    .me-main-section-document{
+        white-space: normal;
+    }
+}
 </style>

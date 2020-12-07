@@ -20,42 +20,53 @@
       <h1 class="me-header-buyer-title">{{ this.getData.header.buyer }}</h1>
 
       <div class="me-header-buyer-icon-group">
-        <font-awesome-icon
-          class="me-header-buyer-icon"
-          :icon="['fas', 'users']"
-        />
-        <span class="me-header-buyer-icon-group-user">{{
-          this.getData.header.contact.name
-        }}</span>
-        <font-awesome-icon
-          class="me-header-buyer-icon"
-          style="color: #65b7df"
-          :icon="['fas', 'exclamation-circle']"
-        />
+        <span class="me-header-buyer-icon-group-wrapper">
+            <font-awesome-icon
+            class="me-header-buyer-icon"
+            :icon="['fas', 'users']"
+            />
+            <span class="me-header-buyer-icon-group-user">
+                {{this.getData.header.contact.name}}
+            </span>
+            
+            <font-awesome-icon
+            class="me-header-buyer-icon"
+            style="color: #65b7df"
+            :icon="['fas', 'exclamation-circle']"
+            />
+        </span>
       </div>
 
       <div class="me-header-buyer-icon-group">
-        <font-awesome-icon
-          class="me-header-buyer-icon"
-          :icon="['fas', 'envelope']"
-        />
-        <span class="me-header-buyer-icon-group-user">{{
-          this.getData.header.contact.email
-        }}</span>
-        <font-awesome-icon
-          class="me-header-buyer-icon phone"
-          :icon="['fas', 'phone']"
-        />
-        <span class="me-header-buyer-icon-group-user">{{
-          this.getData.header.contact.phone
-        }}</span>
-        <font-awesome-icon
-          class="me-header-buyer-icon phone"
-          :icon="['fas', 'fax']"
-        />
-        <span class="me-header-buyer-icon-group-user fax">{{
-          this.getData.header.contact.fax
-        }}</span>
+        <span class="me-header-buyer-icon-group-wrapper">
+            <font-awesome-icon
+            class="me-header-buyer-icon"
+            :icon="['fas', 'envelope']"
+            />
+            <span class="me-header-buyer-icon-group-user">
+                {{this.getData.header.contact.email}}
+            </span>
+        </span>
+
+        <span class="me-header-buyer-icon-group-wrapper">
+            <font-awesome-icon
+            class="me-header-buyer-icon phone"
+            :icon="['fas', 'phone']"
+            />
+            <span class="me-header-buyer-icon-group-user">
+                {{this.getData.header.contact.phone}}
+            </span>
+        </span>
+
+        <span class="me-header-buyer-icon-group-wrapper">
+            <font-awesome-icon
+            class="me-header-buyer-icon phone"
+            :icon="['fas', 'fax']"
+            />
+            <span class="me-header-buyer-icon-group-user fax">
+                {{this.getData.header.contact.fax}}
+            </span>
+        </span>
       </div>
     </div>
 
@@ -165,8 +176,15 @@ header {
   margin-top: 16px;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
+}
+
+.me-header-buyer-icon-group-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 .me-header-buyer-icon {
@@ -200,5 +218,42 @@ header {
 
 .me-header-currency-createdat {
     font-weight: 400;
+}
+
+@media only screen and (max-width: 1320px) {
+
+    .me-header-currency{
+        padding: 25px;
+        margin-top: 25px;
+        margin-left: unset;
+        align-items: flex-start;
+    }
+
+}
+
+@media only screen and (max-width: 994px) {
+    header{
+        flex-direction: column;
+    }
+    .me-header-buyer{
+        margin-left: unset;
+        padding: 25px;
+        margin-top: 25px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .phone{
+        margin-left: unset;
+    }
+}
+
+@media only screen and (max-width: 385px) {
+    .me-header-purchase{
+        width: 250px;
+    }
+    .me-header-purchase-image{
+        margin-left: 190px;
+    }
 }
 </style>

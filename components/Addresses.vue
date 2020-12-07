@@ -1,12 +1,12 @@
 <template>
   <section class="me-address-section">
 
-    <div class="me-adress-section-button-wrapper">
-      <div class="me-adress-section-button" @click="closeAddresses()"><div id="me-adress-section-button" class="me-adress-section-button-content"></div></div>
-      <h5 class="me-adress-section-button-title">Addresses</h5>
+    <div class="me-address-section-button-wrapper">
+      <div class="me-address-section-button" @click="closeAddresses()"><div id="me-address-section-button" class="me-address-section-button-content"></div></div>
+      <h5 class="me-address-section-button-title">Addresses</h5>
     </div>
 
-    <div id="me-adress-section-wrapper" class="me-adress-section-wrapper">
+    <div id="me-address-section-wrapper" class="me-address-section-wrapper">
       <div
         class="me-address-section-cards"
         v-for="card in this.getData.addresses"
@@ -47,16 +47,16 @@
             class="me-address-section-icon"
             :icon="['fas', 'phone']"
           />
-          <span class="me-address-section-info"
-            >{{ card.contact.phone }} -
+          <span class="me-address-section-info">
+              {{ card.contact.phone }} -
             <span class="me-address-section-info">
-              <font-awesome-icon
-                class="me-address-section-icon"
-                :icon="['fas', 'fax']"
-              />
-              <span class="me-address-section-info">{{
-                card.contact.fax
-              }}</span>
+                <font-awesome-icon
+                    class="me-address-section-icon"
+                    :icon="['fas', 'fax']"
+                />
+                <span class="me-address-section-info">
+                    {{card.contact.fax}}
+                </span>
             </span>
           </span>
         </div>
@@ -74,11 +74,11 @@ export default {
   },
   methods:{
       closeAddresses(){
-        let button =  document.getElementById('me-adress-section-button');
-        let cards = document.getElementById('me-adress-section-wrapper');
+        let button =  document.getElementById('me-address-section-button');
+        let cards = document.getElementById('me-address-section-wrapper');
 
-        button.classList.toggle('me-adress-section-button-content-close');
-        cards.classList.toggle('me-adress-section-wrapper-close');
+        button.classList.toggle('me-address-section-button-content-close');
+        cards.classList.toggle('me-address-section-wrapper-close');
       },
       checkValue(value){
         if (value != null) {
@@ -95,14 +95,14 @@ export default {
   width: 95%;
 }
 
-.me-adress-section-button-wrapper{
+.me-address-section-button-wrapper{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     margin-bottom: 15px;
 }
-.me-adress-section-button{
+.me-address-section-button{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -111,7 +111,7 @@ export default {
     border-radius: 50%;
     background-color: #e1f1f8;
 }
-.me-adress-section-button-content{
+.me-address-section-button-content{
     height: 10px;
     width: 10px;
     border: 2px solid #2699d2;
@@ -121,7 +121,7 @@ export default {
     transition: transform 0.3s linear;
     cursor: pointer;
 }
-.me-adress-section-button-content-close{
+.me-address-section-button-content-close{
     transform: rotate(-135deg);
     height: 10px;
     width: 10px;
@@ -132,10 +132,10 @@ export default {
     cursor: pointer;
 }
 
-.me-adress-section-button-title{
+.me-address-section-button-title{
     margin-left: 10px;
 }
-.me-adress-section-wrapper{
+.me-address-section-wrapper{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -144,7 +144,7 @@ export default {
   transition: opacity .5s linear;
 }
 
-.me-adress-section-wrapper-close{
+.me-address-section-wrapper-close{
     opacity: 0;
     pointer-events: none;
 }
@@ -166,9 +166,6 @@ export default {
     align-items: center;
 }
 
-.me-address-section-title{
-
-}
 
 .me-address-section-code{
     color: #a0a0a0;
@@ -184,7 +181,14 @@ export default {
     color: #a0a0a0;
     margin: 15px 15px 0;
 }
-.me-address-section-info{
-    
+
+@media only screen and (max-width: 1600px){
+    .me-address-section-wrapper{
+        justify-content: center;
+    }
+
+    .me-address-section-cards{
+        margin: 25px;
+    }
 }
 </style>
